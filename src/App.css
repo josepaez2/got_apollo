@@ -68,6 +68,10 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style: none;
+}
+
 a:visited {
   color: var(--primary-color);
 }
@@ -138,7 +142,6 @@ body::before {
 .kingdom-section__item {
   width: 12rem;
   height: 12rem;
-  list-style-type: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -167,12 +170,12 @@ body::before {
   animation: borderBar 3000ms ease forwards ;
 }
 
-.kingdom-section__item:hover {
+.characters-list__item:hover,.kingdom-section__item:hover {
   transform: scale(1.05);
   transition: transform 300ms ease;
 }
 
-.kingdom-section__item::before {
+.characters-list__item::before,.kingdom-section__item::before {
   content: '';
   position: absolute;
   top: 0;
@@ -180,66 +183,94 @@ body::before {
   right: 0;
   bottom: 0;
   z-index: -1;
-  opacity: .5;
+  opacity: .35;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.kingdom-section__item--lannister{
+.characters-list__item--lannister , .kingdom-section__item--lannister{
   background: linear-gradient(var(--black) 80%, var(--lannister-color) 100%);
 }
 
-.kingdom-section__item--lannister::before {
+.characters-list__item--lannister::before,.kingdom-section__item--lannister::before {
   background-image: url('./assets/lannister-logo.png');
 }
 
-.kingdom-section__item--tyrell{
+.characters-list__item--tyrell, .kingdom-section__item--tyrell{
   background: linear-gradient(var(--black) 80%, var(--tyrell-color) 100%);
 }
 
+.characters-list__item--tyrell::before,
 .kingdom-section__item--tyrell::before {
   background-image: url('./assets/tyrell-logo.png');
 }
 
-.kingdom-section__item--stark{
+.characters-list__item--stark, .kingdom-section__item--stark{
   background: linear-gradient(var(--black) 80%, var(--stark-color) 100%);
 }
 
+.characters-list__item--stark::before,
 .kingdom-section__item--stark::before {
   background-image: url('./assets/stark-logo.png');
 }
 
-.kingdom-section__item--greyjoy{
+.characters-list__item--greyjoy, .kingdom-section__item--greyjoy{
   background: linear-gradient(var(--black) 80%, var(--greyjoy-color) 100%);
 }
 
+.characters-list__item--greyjoy::before,
 .kingdom-section__item--greyjoy::before{
   background-image: url('./assets/greyjoy-logo.png');
 }
 
-.kingdom-section__item--targaryen{
+.characters-list__item--targaryen, .kingdom-section__item--targaryen{
   background: linear-gradient(var(--black) 80%, var(--targaryen-color) 100%);
 }
 
-.kingdom-section__item--targaryen::before {
+.characters-list__item--targaryen::before,.kingdom-section__item--targaryen::before {
   background-image: url('./assets/targaryen-logo.png');
 }
 
-.kingdom-section__item--arryn{
+.characters-list__item--arryn, .kingdom-section__item--arryn{
   background: linear-gradient(var(--black) 80%, var(--arryn-color) 100%);
 }
 
-.kingdom-section__item--arryn::before {
+.characters-list__item--arryn--arryn::before,.kingdom-section__item--arryn::before {
   background-image: url('./assets/arryn-logo.png');
 }
 
-.kingdom-section__item--martell{
+.characters-list__item--martell, .kingdom-section__item--martell{
   background: linear-gradient(var(--black) 80%, var(--martell-color) 100%);
 }
 
-.kingdom-section__item--martell::before {
+.characters-list__item--martell::before, .kingdom-section__item--martell::before {
   background-image: url('./assets/martell-logo.png');
+}
+
+.characters-list {
+  margin-top: 3rem;
+}
+
+.characters-list__item {
+  margin-bottom: 2rem;
+  width: 13rem;
+  height: 7.5rem;
+  border-radius: 3px;
+  position: relative;
+  opacity: .9;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.characters-list__title {
+  color: var(--white);
+  font-size: 1.65rem;
+  max-width: 50%;
+  text-align: center;
+  line-height: 1.45;
 }
 
 @media screen and (min-width: 768px) {
@@ -260,6 +291,19 @@ body::before {
   .kingdom-section__item {
     height: 9rem;
   }
+
+  .characters-list {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .characters-list__item {
+    width: calc(80% / 3);
+    margin-left: 1.25rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -267,6 +311,16 @@ body::before {
     width: calc(85%/3);
     font-size: 2rem;
     letter-spacing: 1.25px;
+  }
+
+  .characters-list__item {
+    width: 12rem;
+    height: 10rem;
+  }
+
+  .characters-list__title {
+    font-size: 1.8rem;
+    letter-spacing: 1.15px;
   }
 }
 
