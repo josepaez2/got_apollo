@@ -144,6 +144,20 @@ button {
   background: linear-gradient(var(--black) 80%, var(--primary-color) 100%);
 }
 
+.characters-list__item {
+  margin-bottom: 2rem;
+  width: 13rem;
+  height: 7.5rem;
+  border-radius: 3px;
+  position: relative;
+  opacity: .9;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(var(--black) 80%, var(--secondary-color) 100%);
+}
+
 .characters-list__item::before, .families-section__item::before {
   background-image: url('./assets/throne-logo.png');
 }
@@ -255,19 +269,6 @@ button {
 
 .characters-list {
   margin-top: 3rem;
-}
-
-.characters-list__item {
-  margin-bottom: 2rem;
-  width: 13rem;
-  height: 7.5rem;
-  border-radius: 3px;
-  position: relative;
-  opacity: .9;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .characters-list__title {
