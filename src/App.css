@@ -114,6 +114,12 @@ button {
   text-shadow: 3px 3px 3px var(--secondary-color);
 }
 
+.create-family {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
 .families-section {
   margin-top: 4rem;
   width: 100%;

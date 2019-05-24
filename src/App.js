@@ -3,7 +3,7 @@ import Layout from "./components/Layout";
 import "./App.css";
 
 /* Examples */
-import ExampleOne from "./components/examples/exampleOne";
+import ExampleTwo from "./components/examples/exampleTwo";
 
 
 /**
@@ -24,7 +24,7 @@ const App = () => (
     <Layout>
       <h1 className="main-title">A story of ice and GraphQL</h1>
       {/* Put your current component here! */}
-      <ExampleOne />
+      <ExampleTwo />
     </Layout>
   </ApolloProvider>
 );
