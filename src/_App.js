@@ -14,17 +14,23 @@ import ExampleOne from "./components/examples/exampleOne";
     - Connect your client: https://www.apollographql.com/docs/react/essentials/get-started#creating-provider
   */
 
-/* Apollo modules import here*/
+/* Apollo imports here */
+import { ApolloProvider } from 'react-apollo';
+import ApolloClient from 'apollo-boost';
 
 /* Create here the Apollo Client */
-
+const client = new ApolloClient({
+  uri: "https://yoga-got.herokuapp.com"
+})
 
 const App = () => (
+  <ApolloProvider client={client}>
     <Layout>
       <h1 className="main-title">A story of ice and GraphQL</h1>
       {/* Put your current component here! */}
-     {/*  <ExampleOne /> */}
+      <ExampleOne />
     </Layout>
+    </ApolloProvider>
 );
 
 export default App;
