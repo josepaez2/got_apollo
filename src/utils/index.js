@@ -10,4 +10,4 @@ export const gotClassNames = (title, baseClass) =>
     Baratheon: `${baseClass}--baratheon`,
     Greyjoy: `${baseClass}--greyjoy`,
     Martell: `${baseClass}--martell`
-  }[title]);
+  }[title] || "");

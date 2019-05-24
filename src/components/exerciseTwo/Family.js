@@ -2,13 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import { gotClassNames } from "../../utils";
 
-const Kingdom = ({ id, title, atWar, handleClick, refetch }) => (
+const Family = ({ id, title, atWar, handleClick, refetch }) => (
   <li
-    className={`kingdom-section__item ${gotClassNames(
+    className={`families-section__item ${gotClassNames(
       title,
-      "kingdom-section__item"
-    ) || ""} ${atWar && "kingdom-section__item--atWar"}`}
+      "families-section__item"
+    )} ${atWar ? "families-section__item--atWar" : ""}`}
     onClick={() => {
+      if (!handleClick) return;
       handleClick({ variables: { familyId: id } });
       refetch();
     }}
@@ -17,11 +18,11 @@ const Kingdom = ({ id, title, atWar, handleClick, refetch }) => (
   </li>
 );
 
-Kingdom.propTypes = {
+Family.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   atWar: PropTypes.bool.isRequired,
-  handleClick: PropTypes.func.isRequired
+  handleClick: PropTypes.func
 };
 
-export default Kingdom;
+export default Family;

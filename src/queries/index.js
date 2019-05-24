@@ -1,6 +1,6 @@
 import { gql } from "apollo-boost";
 
-export const PLACES = gql`
+export const FAMILIES = gql`
   query {
     families {
       id
@@ -38,6 +38,15 @@ export const SEND_AT_WAR = gql`
       id
       title
       atWar
+    }
+  }
+`;
+
+export const CREATE_CHARACTER = gql`
+  mutation($name: String!, $familyId: ID!) {
+    createCharacter(name: $name, house: "", familyId: $familyId) {
+      id
+      name
     }
   }
 `;

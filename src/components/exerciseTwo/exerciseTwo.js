@@ -1,14 +1,15 @@
 import React from "react";
-import KingdomList from "./kingdomList";
+import FamiliesList from "./FamiliesList";
 import { Query } from "react-apollo";
-import { PLACES } from "../../queries";
+import { FAMILIES } from "../../queries";
 
 const ExerciseTwo = () => (
-  <Query query={PLACES}>
+  <Query query={FAMILIES}>
     {({ data, loading, error }) => {
+      /* Handle your petition behavior */
       if (loading || data.length < 0) return <p>Loading</p>;
       if (error) return <p>Error</p>;
-      return <KingdomList kingdoms={data.families} />;
+      return <FamiliesList families={data.families} />;
     }}
   </Query>
 );

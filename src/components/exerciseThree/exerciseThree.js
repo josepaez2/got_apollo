@@ -1,20 +1,20 @@
 import React from "react";
 import { Query, Mutation } from "react-apollo";
-import { PLACES, SEND_AT_WAR } from "../../queries";
-import KingdomList from "../exerciseTwo/kingdomList";
+import { FAMILIES, SEND_AT_WAR } from "../../queries";
+import FamiliesList from "../exerciseTwo/FamiliesList";
 
 const ExerciseThree = () => (
-  <Query query={PLACES}>
+  <Query query={FAMILIES}>
     {({ data, loading, error, refetch }) => {
       if (error) return <div>Error</div>;
       if (loading) return <div>Loading</div>;
       return (
         <Mutation mutation={SEND_AT_WAR}>
           {sendAtWar => (
-            <KingdomList
+            <FamiliesList
               handleClick={sendAtWar}
               refetch={refetch}
-              kingdoms={data.families}
+              families={data.families}
             />
           )}
         </Mutation>

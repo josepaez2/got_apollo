@@ -16,6 +16,7 @@
   --targaryen-color: #BD3016;
   --arryn-color: #2D2647;
   --martell-color: #C66230;
+  --baratheon-color: #F3D526;
 
 
   /* Fonts */
@@ -106,20 +107,6 @@ button {
   position: relative;
 }
 
-body::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  opacity: .15;
-  background-image: url('./assets/background.jpg');
-  background-repeat: repeat-y;
-  background-size: cover;
-}
-
 .main-title {
   font-size: 3rem;
   text-align: center;
@@ -127,19 +114,19 @@ body::before {
   text-shadow: 3px 3px 3px var(--secondary-color);
 }
 
-.kingdom-section {
+.families-section {
   margin-top: 4rem;
   width: 100%;
 }
 
-.kingdom-section__list {
+.families-section__list {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
 }
 
-.kingdom-section__item {
+.families-section__item {
   width: 12rem;
   height: 12rem;
   display: flex;
@@ -154,28 +141,19 @@ body::before {
   position: relative;
   opacity: .95;
   cursor: pointer;
+  background: linear-gradient(var(--black) 80%, var(--primary-color) 100%);
 }
 
-.kingdom-section__item--atWar {
-  position: relative;
+.characters-list__item::before, .families-section__item::before {
+  background-image: url('./assets/throne-logo.png');
 }
 
-.kingdom-section__item--atWar::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 5px;
-  background-color: var(--lannister-color);
-  animation: borderBar 3000ms ease forwards ;
-}
-
-.characters-list__item:hover,.kingdom-section__item:hover {
+.characters-list__item:hover,.families-section__item:hover {
   transform: scale(1.05);
   transition: transform 300ms ease;
 }
 
-.characters-list__item::before,.kingdom-section__item::before {
+.characters-list__item::before,.families-section__item::before {
   content: '';
   position: absolute;
   top: 0;
@@ -189,63 +167,90 @@ body::before {
   background-size: contain;
 }
 
-.characters-list__item--lannister , .kingdom-section__item--lannister{
+.characters-list__item--lannister , .families-section__item--lannister{
   background: linear-gradient(var(--black) 80%, var(--lannister-color) 100%);
 }
 
-.characters-list__item--lannister::before,.kingdom-section__item--lannister::before {
+.characters-list__item--lannister::before,.families-section__item--lannister::before {
   background-image: url('./assets/lannister-logo.png');
 }
 
-.characters-list__item--tyrell, .kingdom-section__item--tyrell{
+.characters-list__item--tyrell, .families-section__item--tyrell{
   background: linear-gradient(var(--black) 80%, var(--tyrell-color) 100%);
 }
 
 .characters-list__item--tyrell::before,
-.kingdom-section__item--tyrell::before {
+.families-section__item--tyrell::before {
   background-image: url('./assets/tyrell-logo.png');
 }
 
-.characters-list__item--stark, .kingdom-section__item--stark{
+.characters-list__item--stark, .families-section__item--stark{
   background: linear-gradient(var(--black) 80%, var(--stark-color) 100%);
 }
 
 .characters-list__item--stark::before,
-.kingdom-section__item--stark::before {
+.families-section__item--stark::before {
   background-image: url('./assets/stark-logo.png');
 }
 
-.characters-list__item--greyjoy, .kingdom-section__item--greyjoy{
+.characters-list__item--greyjoy, .families-section__item--greyjoy{
   background: linear-gradient(var(--black) 80%, var(--greyjoy-color) 100%);
 }
 
 .characters-list__item--greyjoy::before,
-.kingdom-section__item--greyjoy::before{
+.families-section__item--greyjoy::before{
   background-image: url('./assets/greyjoy-logo.png');
 }
 
-.characters-list__item--targaryen, .kingdom-section__item--targaryen{
+.characters-list__item--targaryen, .families-section__item--targaryen{
   background: linear-gradient(var(--black) 80%, var(--targaryen-color) 100%);
 }
 
-.characters-list__item--targaryen::before,.kingdom-section__item--targaryen::before {
+.characters-list__item--targaryen::before,.families-section__item--targaryen::before {
   background-image: url('./assets/targaryen-logo.png');
 }
 
-.characters-list__item--arryn, .kingdom-section__item--arryn{
+.characters-list__item--arryn, .families-section__item--arryn{
   background: linear-gradient(var(--black) 80%, var(--arryn-color) 100%);
 }
 
-.characters-list__item--arryn--arryn::before,.kingdom-section__item--arryn::before {
+.characters-list__item--arryn--arryn::before,.families-section__item--arryn::before {
   background-image: url('./assets/arryn-logo.png');
 }
 
-.characters-list__item--martell, .kingdom-section__item--martell{
+.characters-list__item--martell, .families-section__item--martell{
   background: linear-gradient(var(--black) 80%, var(--martell-color) 100%);
 }
 
-.characters-list__item--martell::before, .kingdom-section__item--martell::before {
+.characters-list__item--martell::before, .families-section__item--martell::before {
   background-image: url('./assets/martell-logo.png');
+}
+
+.characters-list__item--baratheon, .families-section__item--baratheon {
+  background: linear-gradient(var(--black) 80%, var(--baratheon-color) 100%);
+}
+
+.characters-list__item--baratheon::before, .families-section__item--baratheon::before {
+  background-image: url('./assets/baratheon-logo.png');
+}
+
+.families-section__item--atWar {
+  position: relative;
+}
+
+.families-section__item::after {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: opacity 600ms ease alternate;
+  content: '';
+  position: absolute;
+}
+
+.families-section__item--atWar::after {
+  opacity: .45;
+  background: linear-gradient(to bottom, transparent 30%, red 100%);
 }
 
 .characters-list {
@@ -273,6 +278,75 @@ body::before {
   line-height: 1.45;
 }
 
+.create-form {
+  background-color: var(--white);
+  padding: 2rem 1rem;
+  margin: 2rem 0 0;
+  border-radius: 4px;
+  opacity: .95;
+  box-shadow: 0px 0px 15px 2px var(--tertiary-color);
+}
+
+.create-form__label, .create--form__input {
+  display: block;
+}
+
+.create-form__label {
+  color: var(--black);
+  margin-bottom: .75rem;
+  font-weight: bold;
+  font-size: 1.rem;
+}
+
+.create-form__input {
+  padding: 4px 6px;
+  margin-bottom: 1rem;
+  border: 0;
+  max-width: 90%;
+  border-bottom: 1.5px solid var(--secondary-color);
+  outline: none;
+  font-weight: bold;
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+.create-form__input, .create-form__select:focus {
+  transition: border 500ms ease alternate;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.create-form__submit {
+  background: linear-gradient(to left, var(--tertiary-color), var(--secondary-color));
+  padding: .5rem 2rem;
+  margin: 0 auto;
+  display: block;
+  font-family: var(--fontface-bold);
+  color: var(--white);
+  font-size: 1.35rem;
+}
+
+.create-form__select {
+  background-color: transparent;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid var(--tertiary-color);
+  color: var(--tertiary-color);
+  margin-bottom: 1rem;
+  outline: none;
+  padding: .25rem .5rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.create-form__option {
+  font-size: 1.05rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  display: block;
+  padding: .25rem 0;
+  /* padding:  */
+}
+
 @media screen and (min-width: 768px) {
 
   .main-title {
@@ -280,15 +354,15 @@ body::before {
     max-width: 70%;
   }
 
-  .kingdom-section {
+  .families-section {
     max-width: 70%;
   }
 
-  .kingdom-section__list {
+  .families-section__list {
     flex-flow: row wrap;
   }
 
-  .kingdom-section__item {
+  .families-section__item {
     height: 9rem;
   }
 
@@ -304,10 +378,52 @@ body::before {
     width: calc(80% / 3);
     margin-left: 1.25rem;
   }
+
+  .create-form {
+    width: 20rem;
+    height: 12rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+
+  .create-form--character {
+    height: auto;
+  }
+
+  .create-form__label, .create-form__input {
+    font-size: 1.15rem;
+  }
+
+  .create-form__input {
+    margin-bottom: 1.5rem;
+  }
+
+  .create-character {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+  }
+
+  .create-form__submit {
+    padding: .65rem 2rem;
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-  .kingdom-section__item {
+
+  .layout {
+    padding-top: 2rem;
+  }
+
+  .main-title {
+    font-size: 7.5rem;
+    max-width: 60%;
+  }
+
+  .families-section__item {
     width: calc(85%/3);
     font-size: 2rem;
     letter-spacing: 1.25px;

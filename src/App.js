@@ -1,33 +1,40 @@
 import React from "react";
-import ApolloClient from "apollo-boost";
+import "./App.css";
+
+/* Apollo Boost Config */
 import { ApolloProvider } from "react-apollo";
+import ApolloClient from "apollo-boost";
 import Layout from "./components/Layout";
+
+/* Examples */
 /* import ExampleOne from "./components/examples/exampleOne"; */
-import ExampleTwo from "./components/examples/exampleTwo";
+/* import ExampleTwo from "./components/examples/exampleTwo"; */
+
+/* Exercises */
+/* import ExerciseTwo from "./components/exerciseTwo/_exerciseTwo"; */
+/* import ExerciseThree from "./components/exerciseThree/_exerciseThree"; */
+/* import ExerciseFour from "./components/exerciseFour/_exerciseFour"; */
+
+/* Solutions */
 /* import ExerciseTwo from "./components/exerciseTwo/exerciseTwo"; */
 /* import ExerciseThree from "./components/exerciseThree/exerciseThree"; */
-import "./App.css";
-import ExerciseTwo from "./components/exerciseTwo/exerciseTwo";
+import ExerciseFour from "./components/exerciseFour/exerciseFour";
 
-/* Ejercicio 1: Para comenzar tienes que configurar tu cliente de Apollo
-  Necesitas:
-  - ApolloClient de Apollo-Boost
-  - { ApolloProvider } de React-Apollo
-  - Create una instancia de ApolloClient y le pasas un parametro uri a la configuración del cliente - URL: http://localhost:4000
-  - Envuelve todos tus componentes en ApolloProvider pasandole la instancia de cliente de Apollo
-*/
+/**
+  GraphQL Server: https://yoga-got.herokuapp.com
+**/
 
 /* Create the Apollo Client */
 const client = new ApolloClient({
-  uri: "http://localhost:4000"
+  uri: "https://yoga-got.herokuapp.com/"
 });
 
 const App = () => (
   <ApolloProvider client={client}>
     <Layout>
       <h1 className="main-title">A story of ice and GraphQL</h1>
-      <ExampleTwo />
-      <ExerciseTwo />
+      {/* Put your current component here! */}
+      <ExerciseFour />
     </Layout>
   </ApolloProvider>
 );
