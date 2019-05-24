@@ -3,7 +3,7 @@ import Layout from "./components/Layout";
 import "./App.css";
 
 /* Examples */
-/* import ExampleOne from "./components/examples/exampleOne"; */
+import ExampleOne from "./components/examples/exampleOne";
 /* import ExampleTwo from "./components/examples/exampleTwo"; */
 
 /* Exercises */
@@ -14,7 +14,7 @@ import "./App.css";
 /* Solutions */
 /* import ExerciseTwo from "./components/exerciseTwo/exerciseTwo"; */
 /* import ExerciseThree from "./components/exerciseThree/exerciseThree"; */
-import ExerciseFour from "./components/exerciseFour/exerciseFour";
+/* import ExerciseFour from "./components/exerciseFour/exerciseFour"; */
 
 /**
   GraphQL Server: https://yoga-got.herokuapp.com
@@ -34,7 +34,7 @@ const App = () => (
     <Layout>
       <h1 className="main-title">A story of ice and GraphQL</h1>
       {/* Put your current component here! */}
-      <ExerciseFour />
+      <ExampleOne />
     </Layout>
   </ApolloProvider>
 );
