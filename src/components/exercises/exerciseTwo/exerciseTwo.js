@@ -1,7 +1,7 @@
 import React from "react";
 import FamiliesList from "./FamiliesList";
 import {  } from "react-apollo";
-import {  } from "../../queries";
+import {  } from "../../../queries";
 
 /*
   ** Construyamos un componente que nos permita obtener los datos
