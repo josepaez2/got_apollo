@@ -3,9 +3,9 @@ import Layout from "./components/Layout";
 import "./App.css";
 
 /* Exercise */
-import ExerciseThree from "./components/exercises/exerciseThree/exerciseThree";
+/* import ExerciseFour from "./components/exercises/exerciseFour/exerciseFour"; */
 /* Solution */
-/* import ExerciseThree from "./components/exercises/exerciseThree/_exerciseThree"; */
+import ExerciseFour from "./components/exercises/exerciseFour/_exerciseFour";
 
 /**
   GraphQL Server: https://yoga-got.herokuapp.com
@@ -25,7 +25,7 @@ const App = () => (
     <Layout>
       <h1 className="main-title">A story of ice and GraphQL</h1>
       {/* Put your current component here! */}
-      <ExerciseThree />
+      <ExerciseFour />
     </Layout>
   </ApolloProvider>
 );
