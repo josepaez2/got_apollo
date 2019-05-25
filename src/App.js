@@ -3,9 +3,9 @@ import Layout from "./components/Layout";
 import "./App.css";
 
 /* Exercise */
-/* import ExerciseFour from "./components/exercises/exerciseFour/exerciseFour"; */
+import ExerciseFour from "./components/exercises/exerciseFour/exerciseFour";
 /* Solution */
-import ExerciseFour from "./components/exercises/exerciseFour/_exerciseFour";
+/* import ExerciseFour from "./components/exercises/exerciseFour/_exerciseFour"; */
 
 /**
   GraphQL Server: https://yoga-got.herokuapp.com

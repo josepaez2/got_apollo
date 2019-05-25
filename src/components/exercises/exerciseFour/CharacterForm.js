@@ -27,6 +27,7 @@ const CharacterForm = ({
       onChange={handleInputChange}
       name="family"
     >
+      <option className="create-form__option">Choose one family</option>
       <Query query={FAMILIES}>
         {({ data, loading, error }) => {
           if (loading) return <option>Loading</option>;
