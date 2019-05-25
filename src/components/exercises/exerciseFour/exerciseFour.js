@@ -40,14 +40,9 @@ class ExerciseFour extends Component {
   render() {
     return (
       <section className="create-character">
-        <Mutation mutation={CREATE_CHARACTER}>
+        <Mutation mutation={}>
           {addCharacter => (
-            <CharacterForm
-              addCharacter={addCharacter}
-              fields={this.state.fields}
-              handleInputChange={this.handleInputChange}
-              handleSubmit={this.handleSubmit}
-            />
+            <CharacterForm />
           )}
         </Mutation>
         <ExampleOne />
