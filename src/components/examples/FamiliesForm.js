@@ -25,6 +25,7 @@ class FamiliesForm extends Component {
           Title:
         </label>
         <input
+          required
           name="title"
           id="title"
           type="text"
